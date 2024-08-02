@@ -81,6 +81,17 @@ public class DonarActivity extends AppCompatActivity {
     private void insertData(){
         UserModel userModel = new UserModel(name,phone,email,password);
 
+//        databaseReference.setValue(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                if(task.isSuccessful()){
+//                    startActivity(new Intent(DonarActivity.this, MainActivity.class));
+//                }
+//                finish();
+//                Toast.makeText(DonarActivity.this, "Doner Registration Successful", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
         databaseReference.setValue(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -88,8 +99,9 @@ public class DonarActivity extends AppCompatActivity {
                     startActivity(new Intent(DonarActivity.this, MainActivity.class));
                 }
                 finish();
-                Toast.makeText(DonarActivity.this, "Doner Registration Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DonarActivity.this, "Donar Registration Successful", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 }
